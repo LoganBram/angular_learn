@@ -1,0 +1,15 @@
+<h1>My Store</h1>
+
+<div class="wrapper">
+  <ul>
+    <li *ngFor="let item of products">
+      <h2>
+        <a [title]="item.title"> {{ item.title }}</a>
+      </h2>
+      <p *ngIf="item.description">{{ item.description }}</p>
+      <button type="button" (click)="share()">Share</button>
+      <app-sale [product]="item" (edit)="onEdit()"></app-sale>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>
