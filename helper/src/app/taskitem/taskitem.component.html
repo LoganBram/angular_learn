@@ -12,6 +12,12 @@
 <h2>{{ item.date }}</h2>
 <h3>{{ item.done ? "Complete" : "Incomplete" }}</h3>
 <div *ngIf="!editable">
-  <button (click)="onEditable()">Edit</button>
+  <button (click)="editable = !editable">Edit</button>
   <button (click)="delete.emit()">Delete</button>
+</div>
+
+<div *ngIf="editable">
+  <input #edit [value]="item.name" (keyup.enter)="onEdit(edit.value)" />
+  <button (click)="onEdit(edit.value)">Save</button>
+  <button (click)="editable = !editable">Cancel</button>
 </div>

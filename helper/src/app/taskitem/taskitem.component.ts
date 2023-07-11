@@ -9,20 +9,25 @@ import {Task, tasks} from '../tasks'
 export class TaskitemComponent {
   @Input() item!: Task
   @Output() delete = new EventEmitter<Task>()
-
+  @Output() add = new EventEmitter<Task>()
+  //each item has access to their own editable variable
   editable = false
-
-
 
   onCheck(item: Task){
     item.done = !item.done
     return item
   }
 
-  onEditable(){
-    this.editable = !this.editable
-    return this.editable
+
+  onEdit(name: string){
+    if (!name) return;
+    this.item.name = name
+    this.editable = false;
   }
+
+
+
+
 
   
 
