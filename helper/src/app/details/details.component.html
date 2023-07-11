@@ -1,0 +1,8 @@
+<h2>Product Details</h2>
+
+<div *ngIf="item">
+  <h1>{{ item.name }}</h1>
+  <h2>{{ item.date }}</h2>
+  <h3 *ngIf="item.done">Completed</h3>
+  <h3 *ngIf="!item.done">Incomplete</h3>
+</div>

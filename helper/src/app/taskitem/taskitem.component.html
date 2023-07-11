@@ -4,7 +4,11 @@
   (change)="item.done = !item.done"
   [checked]="item.done"
 />
-<label [for]="item.id">{{ item.name }}</label>
+<label [for]="item.id"
+  ><a [title]="item.name" [routerLink]="['/item', item.id]">{{
+    item.name
+  }}</a></label
+>
 <h2>{{ item.date }}</h2>
 <h3>{{ item.done }}</h3>
 <div *ngIf="!editable">

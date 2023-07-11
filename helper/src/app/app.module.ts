@@ -5,17 +5,20 @@ import {  RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { TaskitemComponent } from './taskitem/taskitem.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    TaskitemComponent
+    TaskitemComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: '', component: ListComponent}
+      {path: '', component: ListComponent},
+      {path: 'item/:itemId', component: DetailsComponent}
     ])
   ],
   providers: [],
