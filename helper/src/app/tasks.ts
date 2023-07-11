@@ -3,6 +3,7 @@ export interface Task{
     name: string;
     date: string;
     done: boolean;
+    editable: boolean;
 
 }
 
@@ -11,11 +12,13 @@ export const tasks = [
     id: 1,
     name: 'Task 1',
     date: '2019-01-01',
-    done: false
+    done: false,
+    editable: false
     },
     {
     id: 2,
     name: 'Task 2',
     date: '2020-01-01',
-    done: false
+    done: false,
+    editable: false
     }]

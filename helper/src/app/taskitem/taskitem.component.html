@@ -1,0 +1,13 @@
+<input
+  [id]="item.id"
+  type="checkbox"
+  (change)="item.done = !item.done"
+  [checked]="item.done"
+/>
+<label [for]="item.id">{{ item.name }}</label>
+<h2>{{ item.date }}</h2>
+<h3>{{ item.done }}</h3>
+<div *ngIf="!editable">
+  <button (click)="onEditable()">Edit</button>
+  <button (click)="delete.emit()">Delete</button>
+</div>

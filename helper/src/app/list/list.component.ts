@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import {tasks} from '../tasks';
+import {tasks, Task} from '../tasks';
+
 
 @Component({
   selector: 'app-list',
@@ -10,4 +11,11 @@ import {tasks} from '../tasks';
 export class ListComponent {
 
     tasks = [...tasks]
+
+    onCheckbox(task: Task){
+      task.done = !task.done
+
+    }
+
+
 }
