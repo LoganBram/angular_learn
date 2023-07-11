@@ -12,9 +12,8 @@ export class ListComponent {
 
     tasks = [...tasks]
 
-    onCheckbox(task: Task){
-      task.done = !task.done
-
+    onDelete(task: Task){
+      this.tasks.splice(this.tasks.indexOf(task), 1)
     }
 
 

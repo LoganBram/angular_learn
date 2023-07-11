@@ -1,5 +1,5 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import {Task} from '../tasks'
+import {Task, tasks} from '../tasks'
 
 @Component({
   selector: 'app-taskitem',
@@ -11,6 +11,8 @@ export class TaskitemComponent {
   @Output() delete = new EventEmitter<Task>()
 
   editable = false
+
+
 
   onCheck(item: Task){
     item.done = !item.done
