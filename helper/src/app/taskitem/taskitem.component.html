@@ -10,7 +10,7 @@
   }}</a></label
 >
 <h2>{{ item.date }}</h2>
-<h3>{{ item.done }}</h3>
+<h3>{{ item.done ? "Complete" : "Incomplete" }}</h3>
 <div *ngIf="!editable">
   <button (click)="onEditable()">Edit</button>
   <button (click)="delete.emit()">Delete</button>
