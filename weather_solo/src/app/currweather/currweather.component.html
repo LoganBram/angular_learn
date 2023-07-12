@@ -1,1 +1,11 @@
-<p>{{ location }}</p>
+<div class="wrap" *ngIf="location">
+  <div class="left">
+    <h1>{{ location }} date</h1>
+    <h2>Today in {{ location }} location</h2>
+  </div>
+  <div class="mid"></div>
+  <div class="right">
+    <h1>{{ location }} temp</h1>
+    <h2>{{ location }} feels like</h2>
+  </div>
+</div>

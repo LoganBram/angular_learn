@@ -14,7 +14,8 @@ import { CurrweatherComponent } from './currweather/currweather.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: '', component: WeatherappComponent}
+      {path: '', component: WeatherappComponent},
+      {path: 'location/:locationplace', component: CurrweatherComponent}
     ])
   ],
   providers: [],
