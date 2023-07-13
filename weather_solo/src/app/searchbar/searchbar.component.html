@@ -11,10 +11,10 @@
     </div>
 
     <ul>
-      <li *ngFor="let city of searchResult">
-        {{ city.location }}
+      <li *ngFor="let city of searchResult" (click)="locationChange(city)">
+        <p>{{ city.location }}</p>
       </li>
     </ul>
   </div>
-  <div></div>
+  <app-currweather [city]="currentcity"> </app-currweather>
 </div>

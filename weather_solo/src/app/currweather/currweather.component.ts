@@ -12,12 +12,8 @@ import { forecast, Forecast } from '../forecast'
   styleUrls: ['./currweather.component.css']
 })
 export class CurrweatherComponent{
-  
-  @Input() weather!: Forecast;
 
-  ngOnInit(){
-    //take location and get weather 
+  @Input() city!: Forecast
   
-  }
 
 }
