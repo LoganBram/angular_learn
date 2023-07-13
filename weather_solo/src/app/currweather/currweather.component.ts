@@ -13,7 +13,7 @@ import { forecast, Forecast } from '../forecast'
 })
 export class CurrweatherComponent{
   
-  @Input() location!: String;
+  @Input() weather!: Forecast;
 
   ngOnInit(){
     //take location and get weather 
