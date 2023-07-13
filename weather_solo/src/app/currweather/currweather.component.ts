@@ -1,6 +1,7 @@
 import { Component,Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { forecast, Forecast } from '../forecast'
+import { GetweatherService } from '../getweather.service';
 
 
 
@@ -14,6 +15,12 @@ import { forecast, Forecast } from '../forecast'
 export class CurrweatherComponent{
 
   @Input() city!: Forecast
+
+  constructor(private APIservice: GetweatherService){}
+
+  get getWeather(){
+    return this.APIservice.getCurrentWeather();
+  }
   
 
 }
