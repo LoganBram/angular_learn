@@ -11,7 +11,11 @@ export class GetweatherService {
   constructor(private http: HttpClient) {}
 
   public getCurrentWeather(){
-    this.http.get('https://api.openweathermap.org/data/3.0/onecall?lat=49&lon=123&exclude={part}&appid={myGlobals.apikey}')
+    return this.http.get('https://api.openweathermap.org/data/3.0/onecall?lat=49&lon=123&appid=' + myGlobals.weather_apikey)
+  }
+
+  public getCurrentLocation(){
+    return this.http.get('https://api.ipgeolocation.io/ipgeo?apiKey=' + myGlobals.location_apikey)
   }
 
 }
