@@ -1,0 +1,9 @@
+ul {
+   column-count: 3
+  }
+
+.weatherdata{
+    display: flex;
+    flex-direction: row;
+    
+}

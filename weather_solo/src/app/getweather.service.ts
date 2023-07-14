@@ -15,7 +15,7 @@ export class GetweatherService {
     const longitude = locationObj.longitude;
     const apiKey = myGlobals.weather_apikey;
     
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
 
     return this.http.get(url);
 
