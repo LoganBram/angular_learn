@@ -2,6 +2,7 @@ import { Component,Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { forecast, Forecast } from '../forecast'
 import { GetweatherService } from '../getweather.service';
+import { Observable, switchMap } from 'rxjs';
 
 
 
@@ -12,33 +13,33 @@ import { GetweatherService } from '../getweather.service';
   templateUrl: './currweather.component.html',
   styleUrls: ['./currweather.component.css']
 })
+
 export class CurrweatherComponent implements OnInit {
- 
+  @Input() city!: any;
+  locationObj: any;
+  forecastObj: any;
 
-  @Input() city! : any
+  constructor(private APIservice: GetweatherService) {}
 
-  location: any
-
-  constructor(private APIservice: GetweatherService){}
-  
-
-  get getWeather(){
-    return this.APIservice.getCurrentWeather();
+  getWeather(location: any) {
+    return this.APIservice.getCurrentWeather(location);
   }
 
-  get getLocation(){
+  getLocation() {
     return this.APIservice.getCurrentLocation();
   }
 
   ngOnInit() {
-    this.location = this.APIservice.getCurrentLocation().subscribe((response) => {
-      console.log(response);
-    },
-  );
-    
-    
+    // get location of current URL
+    this.getLocation().subscribe((response) => {
+      this.locationObj = response;
+      
+      // get weather of current location
+      this.getWeather(this.locationObj).subscribe((weatherResponse) => {
+        this.forecastObj = weatherResponse;
+        console.log(this.forecastObj);
+        // Do something with the weather data here
+      });
+    });
   }
-  
-  
-
 }

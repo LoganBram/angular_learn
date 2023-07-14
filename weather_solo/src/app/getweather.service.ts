@@ -10,10 +10,19 @@ export class GetweatherService {
 
   constructor(private http: HttpClient) {}
 
-  public getCurrentWeather(){
-    return this.http.get('https://api.openweathermap.org/data/3.0/onecall?lat=49&lon=123&appid=' + myGlobals.weather_apikey)
+  public getCurrentWeather(locationObj: any){
+    const latitude = locationObj.latitude;
+    const longitude = locationObj.longitude;
+    const apiKey = myGlobals.weather_apikey;
+    
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+    return this.http.get(url);
+
   }
 
+
+  //api call for getting the current location of user
   public getCurrentLocation(){
     return this.http.get('https://api.ipgeolocation.io/ipgeo?apiKey=' + myGlobals.location_apikey)
   }
