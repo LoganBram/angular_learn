@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as myGlobals from './env'
 
 @Component({
   selector: 'app-root',

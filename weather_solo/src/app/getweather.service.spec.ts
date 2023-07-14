@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { GetweatherService } from './getweather.service';
+import * as myGlobals from './env'
 
 describe('GetweatherService', () => {
   let service: GetweatherService;
