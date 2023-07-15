@@ -1,9 +1,20 @@
-ul {
-   column-count: 3
-  }
 
-.weatherdata{
-    display: flex;
-    flex-direction: row;
-    
+
+.wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    justify-content: space-around;
 }
+
+.namedate{
+    grid-column: 1;
+}
+.currweather{
+    grid-column: 2;
+}
+
+.temperatures{
+    grid-column: 3;
+}
+

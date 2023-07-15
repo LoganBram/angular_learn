@@ -1,21 +1,17 @@
-<div class="namedate">
-  <h1 id="location">{{ locationObj.city }}, {{ locationObj.country_code2 }}</h1>
-  <h2 id="date">{{ date }}</h2>
-</div>
-<div class="weatherdata">
-  <div class="currweather">
-    <p>photo</p>
-    <p>{{ forecastObj.main.temp }}</p>
-    <p>{{ forecastObj.weather[0].description }}</p>
+<div class="wrapper">
+  <div class="namedate">
+    <h1 id="location">
+      {{ locationObj.city }}, {{ locationObj.country_code2 }}
+    </h1>
+    <h2 id="date">{{ date }}</h2>
   </div>
-  <div class="weatherdetailswrap">
-    <ul class="weatherdetailslist">
-      <li>{{ forecastObj.main.temp_max }}°</li>
-      <li>{{ forecastObj.main.temp_min }}°</li>
-      <li>{{ forecastObj.main.feels_like }}</li>
-      <li>wind</li>
-      <li>sunset</li>
-      <li>sunrise</li>
-    </ul>
+
+  <div class="currweather">
+    <h4 id="weatherphoto">photo</h4>
+    <p id="weatherdescription">{{ forecastObj.weather[0].description }}</p>
+  </div>
+  <div class="temperatures">
+    <h1 id="temp">{{ forecastObj.main.temp }}</h1>
+    <h2>{{ forecastObj.main.feels_like }}</h2>
   </div>
 </div>
