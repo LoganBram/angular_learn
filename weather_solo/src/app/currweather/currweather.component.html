@@ -4,9 +4,11 @@
       Weather in {{ locationObj.city }}, {{ locationObj.country_code2 }}
     </h2>
     <h1 id="temp">{{ forecastObj.main.temp }}C</h1>
-
-    <div id="weatherdescription">
-      {{ forecastObj.weather[0].description }}
+    <div class="description">
+      <img [src]="icon" alt="" />
+      <div id="weatherdescription">
+        {{ forecastObj.weather[0].description }}
+      </div>
     </div>
     <div class="feelslike">Feels like: {{ forecastObj.main.feels_like }}</div>
     <div class="wind">Wind speed: {{ forecastObj.wind.speed }}</div>
