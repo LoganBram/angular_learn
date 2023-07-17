@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { WeatherappComponent } from './weatherapp/weatherapp.component';
 import { CurrweatherComponent } from './currweather/currweather.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SearchbarComponent } from './searchbar/searchbar.component';
+
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -15,7 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     WeatherappComponent,
     CurrweatherComponent,
-    SearchbarComponent
   ],
   imports: [
     BrowserModule,
