@@ -1,5 +1,5 @@
 # angular_learn, all done independent of tutorials
 
-## Weather app displays weather based on current location
+### Weather app displays weather based on current location
 
-## Functioning task list
+### Functioning task list
